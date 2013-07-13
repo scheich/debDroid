@@ -1,0 +1,4 @@
+# generated files
+bin/*
+!bin/*.apk
+gen/

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+*
+* Licensed under the Apache License, Version 2.0 (the "License"); you may
+* not use this file except in compliance with the License. You may obtain
+* a copy of the License at
+* http://www.apache.org/licenses/LICENSE-2.0
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
+-->
+<resources>
+
+    <string-array name="context_menu">
+        <item>show</item>
+        <item>share</item>
+    </string-array>
+    <string-array name="searchon_entries">
+        <item>package names only</item>
+        <item>descriptions</item>
+    </string-array>
+    <string-array name="suite_entries">
+        <item>oldstable</item>
+        <item>stable</item>
+        <item>testing</item>
+        <item>unstable</item>
+        <item>experimental</item>
+    </string-array>
+    <string-array name="section_entries">
+        <item>main</item>
+        <item>contrib</item>
+        <item>non-free</item>
+    </string-array>
+    <string-array name="textsize_entries">
+        <item>small</item>
+        <item>medium</item>
+        <item>large</item>
+    </string-array>
+
+    <integer-array name="textsize_values">
+        <item>-2</item>
+        <item>0</item>
+        <item>2</item>
+    </integer-array>
+
+    <string-array name="checkpackages_entries">
+        <item>only manually</item>
+        <item>Every day</item>
+        <item>Every Monday</item>
+        <item>Every first day of the month</item>
+    </string-array>
+    <string-array name="view_entries">
+        <item>package name</item>
+        <item>suites</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+*
+* Licensed under the Apache License, Version 2.0 (the "License"); you may
+* not use this file except in compliance with the License. You may obtain
+* a copy of the License at
+* http://www.apache.org/licenses/LICENSE-2.0
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
+-->
+<resources>
+
+    <string name="app_name">debDroid</string>
+    <string name="queryhint">search packages</string>
+    <string name="welcome">welcome to debDroid\n\nThis app downloads search results from packages.debian.org and shows them in a listview.</string>
+    <string name="loading">loading &#8230;</string>
+    <string name="noresults">no results</string>
+    <string name="error">connection error</string>
+    <string name="pleasechoose">please choose:</string>
+    <string name="searchon">search on</string>
+    <string name="exact">only show exact matches</string>
+    <string name="suite">distribution</string>
+    <string name="section">section</string>
+    <string name="selectatleastone">you have to select at least one</string>
+    <string name="checkpackages">check monitored package(s)</string>
+    <string name="textsize">textsize</string>
+    <string name="searchresultsview">search results view</string>
+    <string name="changesnextsearch">changes will take effect after next search</string>
+    <string name="other">other</string>
+    <string name="images">download thumbnails</string>
+    <string name="settings">settings</string>
+    <string name="share">share</string>
+    <string name="from">from</string>
+    
+    <plurals name="match">
+        <item quantity="zero">0 matches</item>
+        <item quantity="one">1 match</item>
+        <item quantity="other">%d matches</item>
+    </plurals>
+    <plurals name="version">
+        <item quantity="zero">0 versions</item>
+        <item quantity="one">1 version</item>
+        <item quantity="other">%d versions</item>
+    </plurals>
+    <plurals name="arch">
+        <item quantity="zero">0 archs</item>
+        <item quantity="one">1 arch</item>
+        <item quantity="other">%d archs</item>
+    </plurals>
+
+    <string name="about_sherlock_titel">ActionBarSherlock</string>
+    <string name="about_sherlock_link">github.com/JakeWharton/ActionBarSherlock</string>
+    <string name="about_sherlock_licence">Copyright 2012 Jake Wharton\n\nLicensed under the Apache License, Version 2.0 (the "License");you may not use this file except in compliance with the License.You may obtain a copy of the License at\n\n   http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, softwaredistributed under the License is distributed on an "AS IS" BASIS,WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.See the License for the specific language governing permissions andlimitations under the License.</string>
+    <string name="about_lazylist_titel">LazyList</string>
+    <string name="about_lazylist_link">github.com/thest1/LazyList</string>
+    <string name="about_lazylist_licence">(The MIT License)\n\nCopyright &#169; 2009&#169;2012 Fedor Vlasov &lt;thest2@gmail.com&gt; \n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \'Software\'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \'AS IS\', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</string>
+
+</resources>
