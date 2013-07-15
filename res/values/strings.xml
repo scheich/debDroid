@@ -26,7 +26,8 @@
     <string name="exact">only show exact matches</string>
     <string name="suite">distribution</string>
     <string name="section">section</string>
-    <string name="selectatleastone">you have to select at least one</string>
+    <string name="selectatleastonesuite">you have to select at least one suite</string>
+    <string name="selectatleastonesection">you have to select at least one section</string>
     <string name="checkpackages">check monitored package(s)</string>
     <string name="textsize">textsize</string>
     <string name="searchresultsview">search results view</string>
@@ -36,7 +37,7 @@
     <string name="settings">settings</string>
     <string name="share">share</string>
     <string name="from">from</string>
-    
+
     <plurals name="match">
         <item quantity="zero">0 matches</item>
         <item quantity="one">1 match</item>

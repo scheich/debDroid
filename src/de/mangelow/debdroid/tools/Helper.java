@@ -65,6 +65,7 @@ public class Helper {
 	private final String PREF_FILE = "Prefs";
 
 	public static Suite selected_suite;
+	public static Version selected_version;
 
 	public SearchResult [] parseSearchResults(String html, int searchresultsview) {
 
@@ -286,28 +287,47 @@ public class Helper {
 			Version versions[] = selected_suite.getVersions();
 			int length_versions = versions.length;
 
-			String body = selected_suite.getPackagename() + " " + context.getString(R.string.from) + " " + selected_suite.getAlias() + " (" + selected_suite.getSuite() + ")" + " \n\n" 
-					+ context.getResources().getQuantityString(R.plurals.version, selected_suite.getVersions().length, selected_suite.getVersions().length) + ":\n\n";
-
-			for (int i = 0; i < length_versions; i++) {
-				Version v = versions[i];
-
-				String [] archs = v.getArchs();
+			String body = selected_suite.getPackagename() + " " + context.getString(R.string.from) + " " + selected_suite.getAlias() + " (" + selected_suite.getSuite() + ")" + " \n\n";
+			if(selected_version!=null) {				
+				String [] archs = selected_version.getArchs();
 				if(archs!=null) {
 					int length_archs = archs.length;
 
-					body += v.getVersion() + " (" + context.getResources().getQuantityString(R.plurals.arch, length_archs, length_archs) + ")\n";
+					body += selected_version.getVersion() + " (" + context.getResources().getQuantityString(R.plurals.arch, length_archs, length_archs) + ")\n";
 
 					for (int k = 0; k < length_archs; k++) {
 						body += archs[k] + " ";
 					}
 				}
-
-				if(i<length_versions-1)body += "\n\n";
-
 			}
-			return body;
+			else {
+				
+				body += context.getResources().getQuantityString(R.plurals.version, selected_suite.getVersions().length, selected_suite.getVersions().length) + ":\n\n";
+
+				for (int i = 0; i < length_versions; i++) {
+					Version v = versions[i];
+
+					String [] archs = v.getArchs();
+					if(archs!=null) {
+						int length_archs = archs.length;
+
+						body += v.getVersion() + " (" + context.getResources().getQuantityString(R.plurals.arch, length_archs, length_archs) + ")\n";
+
+						for (int k = 0; k < length_archs; k++) {
+							body += archs[k] + " ";
+						}
+					}
+
+					if(i<length_versions-1)body += "\n\n";
+
+				}
+			}
 			
+			selected_suite = null;
+			selected_version = null;
+
+			return body;
+
 		}
 		return null;
 	}

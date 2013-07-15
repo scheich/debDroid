@@ -40,6 +40,8 @@ public class DetailsFragment extends SherlockFragment {
 	private ProgressBar pb;
 	private TextView tv;
 
+	private Helper mHelper = new Helper();
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -54,9 +56,12 @@ public class DetailsFragment extends SherlockFragment {
 		}
 		if(D)Log.d(TAG, "url - " + url);				
 
+		int [] textsize_values = getActivity().getApplicationContext().getResources().getIntArray(R.array.textsize_values);
+
 		wv = (WebView) v.findViewById(R.id.wv);
 		pb = (ProgressBar) v.findViewById(R.id.pb);
 		tv = (TextView) v.findViewById(R.id.tv);
+		tv.setTextSize(16 + textsize_values[mHelper.loadIntPref(getActivity().getApplicationContext(), "textsize", mHelper.TEXTSIZE_DEFAULT)]);			                                
 
 		wv.setWebViewClient(new WebViewClient() {
 			public void onPageFinished(WebView view, String url) {
@@ -67,6 +72,7 @@ public class DetailsFragment extends SherlockFragment {
 		});
 		wv.getSettings().setSupportZoom(true);  
 		wv.getSettings().setBuiltInZoomControls(true);
+		wv.getSettings().setUseWideViewPort(true);
 		wv.loadUrl(url);
 
 		return v;

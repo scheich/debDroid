@@ -71,6 +71,8 @@ public class SearchResultsFragment extends SherlockFragment {
 
 	private String packagename;
 
+	private int textsize_values [];
+	
 	//
 
 	public static SearchResultsFragment newInstance(String packagename) {
@@ -102,10 +104,17 @@ public class SearchResultsFragment extends SherlockFragment {
 			public boolean onChildClick(ExpandableListView parent, View v,int i, int i1, long id) {
 				if(D)Log.d(TAG, "onChildClick - " + i + ":" + i1);				
 
+				int searchresultsview = mHelper.loadIntPref(context, "searchresultsview", mHelper.SEARCHRESULTSVIEW_DEFAULT);
+
 				SearchResult searchresult = searchresults[i];
 
 				Suite ss [] = searchresult.getSuites(); 
-				Helper.selected_suite = ss[i1];
+				
+				int suite_index = i1;
+				if(searchresultsview!=mHelper.SEARCHRESULTSVIEW_DEFAULT) {
+					suite_index = 0;
+				}
+				Helper.selected_suite = (Suite) ss[suite_index];
 
 				if(mHelper.isTabletAndLandscape(context)) {
 					getSherlockActivity().invalidateOptionsMenu();
@@ -122,7 +131,11 @@ public class SearchResultsFragment extends SherlockFragment {
 		elv.setOnItemLongClickListener(new OnItemLongClickListener() {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-				if (ExpandableListView.getPackedPositionType(id) == ExpandableListView.PACKED_POSITION_TYPE_CHILD) {
+				
+				int searchresultsview = mHelper.loadIntPref(context, "searchresultsview", mHelper.SEARCHRESULTSVIEW_DEFAULT);
+				
+				if (ExpandableListView.getPackedPositionType(id) == ExpandableListView.PACKED_POSITION_TYPE_CHILD||searchresultsview!=mHelper.SEARCHRESULTSVIEW_DEFAULT) {
+					
 					final int i = ExpandableListView.getPackedPositionGroup(id);
 					final int i1 = ExpandableListView.getPackedPositionChild(id);
 					if(D)Log.d(TAG, "onChildLongClick - " + i + ":" + i1);
@@ -130,7 +143,14 @@ public class SearchResultsFragment extends SherlockFragment {
 					final SearchResult searchresult = searchresults[i];
 
 					final Suite ss [] = searchresult.getSuites();
-					final Suite s = (Suite) ss[i1];
+					
+					int suite_index = i1;
+					if(searchresultsview!=mHelper.SEARCHRESULTSVIEW_DEFAULT) {
+						suite_index = 0;
+						if (ExpandableListView.getPackedPositionType(id) == ExpandableListView.PACKED_POSITION_TYPE_CHILD)Helper.selected_version = ss[suite_index].getVersions()[i1];
+					}
+					
+					final Suite s = (Suite) ss[suite_index];
 
 					String entries [] = getResources().getStringArray(R.array.context_menu);
 
@@ -171,13 +191,16 @@ public class SearchResultsFragment extends SherlockFragment {
 					alert.show();				
 
 				}
-
 				return true;
 			}
 		});
 
 		pb = (ProgressBar) v.findViewById(R.id.pb);
+		
+		textsize_values = context.getResources().getIntArray(R.array.textsize_values);
+
 		tv = (TextView) v.findViewById(R.id.tv);
+		tv.setTextSize(16 + textsize_values[mHelper.loadIntPref(context, "textsize", mHelper.TEXTSIZE_DEFAULT)]);			                                
 
 		if(packagename!=null&&packagename.length()>0) {
 			new ListViewTask(packagename, mHelper.loadIntPref(context, "searchresultsview", mHelper.SEARCHRESULTSVIEW_DEFAULT)).execute();					
@@ -205,6 +228,8 @@ public class SearchResultsFragment extends SherlockFragment {
 			ab.setTitle(getResources().getString(R.string.app_name));
 			ab.setSubtitle(null);
 
+			
+			tv.setTextSize(16 + textsize_values[mHelper.loadIntPref(context, "textsize", mHelper.TEXTSIZE_DEFAULT)]);			                                
 			tv.setText(getResources().getString(R.string.loading));
 		}
 		@Override

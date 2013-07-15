@@ -139,7 +139,7 @@ public class OptionsActivity extends PreferenceActivity {
 							}
 						}
 						if(check==0) {
-							Toast.makeText(context, getString(R.string.selectatleastone) + " " + getString(R.string.suite), Toast.LENGTH_LONG).show();
+							Toast.makeText(context, getString(R.string.selectatleastonesuite), Toast.LENGTH_LONG).show();
 							return false;
 						}
 					}					
@@ -192,7 +192,7 @@ public class OptionsActivity extends PreferenceActivity {
 							}
 						}
 						if(check==0) {
-							Toast.makeText(context, getString(R.string.selectatleastone) + " " + getString(R.string.section), Toast.LENGTH_LONG).show();
+							Toast.makeText(context, getString(R.string.selectatleastonesection), Toast.LENGTH_LONG).show();
 							return false;
 						}
 					}					
@@ -272,8 +272,6 @@ public class OptionsActivity extends PreferenceActivity {
 
 				mHelper.saveIntPref(context, "textsize", newvalue);
 				
-				Toast.makeText(context, getResources().getString(R.string.changesnextsearch), Toast.LENGTH_LONG).show();
-
 				return true;
 			}
 		});		
@@ -305,8 +303,6 @@ public class OptionsActivity extends PreferenceActivity {
 
 				mHelper.saveIntPref(context, "searchresultsview", newvalue);
 				
-				Toast.makeText(context, getResources().getString(R.string.changesnextsearch), Toast.LENGTH_LONG).show();
-
 				return true;
 			}
 		});		
@@ -331,8 +327,6 @@ public class OptionsActivity extends PreferenceActivity {
 				int nv = 0;
 				if(newvalue==true)nv = 1;
 				mHelper.saveIntPref(context, "images", nv);
-
-				Toast.makeText(context, getResources().getString(R.string.changesnextsearch), Toast.LENGTH_LONG).show();
 
 				return true;
 			}
