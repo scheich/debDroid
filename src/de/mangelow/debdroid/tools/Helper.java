@@ -83,7 +83,7 @@ public class Helper {
 
 			String temp_package = al_temp_searchresults.get(i);
 
-			String packagename_pattern = "Package (.*?)</h3>";
+			String packagename_pattern = " (.*?)</h3>";
 			ArrayList<String> al_temp_packagename = getContent(packagename_pattern,temp_package);
 			String packagename = "";
 			if(al_temp_packagename.size()>0)packagename = al_temp_packagename.get(0).trim();
