@@ -42,7 +42,7 @@ public class Helper {
 	private final String TAG	= "dD."+getClass().getSimpleName();
 	private final boolean D = false;
 
-	private final String DEBIAN_PACKAGESEARCH_URL = "http://packages.debian.org/search?";
+	private final String DEBIAN_PACKAGESEARCH_URL = "https://packages.debian.org/search?";
 
 	private final String [] SEARCHON  = { "names", "all" };
 	public final int SEARCHON_DEFAULT  = 0;
