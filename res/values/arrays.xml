@@ -23,12 +23,14 @@
         <item>package names only</item>
         <item>descriptions</item>
     </string-array>
-    <string-array name="suite_entries">
-        <item>oldstable</item>
+    <string-array name="suite_entries">        
         <item>stable</item>
         <item>testing</item>
         <item>unstable</item>
         <item>experimental</item>
+        <item>stable-backports</item>
+        <item>oldstable</item>
+        <item>oldstable-backports</item>
     </string-array>
     <string-array name="section_entries">
         <item>main</item>

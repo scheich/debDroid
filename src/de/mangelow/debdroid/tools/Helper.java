@@ -49,7 +49,7 @@ public class Helper {
 
 	public final int EXACT_DEFAULT  = 0;
 
-	public final String [] SUITE  = { "stable", "testing", "unstable", "experimental", "oldstable" };
+	public final String [] SUITE  = { "stable", "testing", "unstable", "experimental", "stable-backports", "oldstable" , "oldstable-backports" };
 	public final int SUITE_DEFAULT  = 1;
 
 	public final String [] SECTION  = { "main", "contrib", "non-free"};
@@ -118,7 +118,8 @@ public class Helper {
 						s.setSuite(suitename);
 					}
 				}
-
+				if (s.getSuite()==null)s.setSuite(s.getAlias());
+				
 				String category_pattern = "</a> \\((.*?)\\):";
 				ArrayList<String> al_temp_category = getContent(category_pattern,temp_suite);
 				String category = "";
